@@ -31,12 +31,12 @@ public class SpringDataJpaApplication {
 		
 		//for inserting multiple use at time
 		
-//		User user2=new User();
-//		user2.setCity("Delhi");
-//		user2.setName("Rajat");
-//		user2.setStatus("Java Programmer");
-//		
-//		List<User> userList=List.of(user,user2);
+		User user2=new User();
+		user2.setCity("Delhi");
+		user2.setName("Rajat");
+		user2.setStatus("Java Programmer");
+		
+		List<User> userList=List.of(user,user2);
 		
 		            //or//
 		
@@ -45,12 +45,12 @@ public class SpringDataJpaApplication {
 		// userList.add(user);
 		// userList.add(user2);	
 //		Iterable<User> result=userRepo.saveAll(userList);
-		
+//		
 //		result.forEach(userPresent -> {
 //			System.out.println(userPresent);
 //		});
 		
-//		System.out.println("Task done");
+		System.out.println("Task done");
 		
 		//update 
 //		Optional<User> foundUser=userRepo.findById(3);
@@ -86,9 +86,39 @@ public class SpringDataJpaApplication {
 //		System.out.println("Id 4 deleted");
 		
 		//delete multiple element at a time
-		List<User> allUser=userRepo.findAll();
-		userRepo.deleteAll();
-		System.out.println("all items got deleted");
+//		List<User> allUser=userRepo.findAll();
+//		userRepo.deleteAll();
+//		System.out.println("all items got deleted");
+
+		
+		//Derived Query method
+		List<User> userByCity=userRepo.findByCity("Haridwar");
+		for(User res:userByCity)
+		System.out.println(res);
+		
+		User userBynameAndCity=userRepo.findByNameAndCity("Rajat","Delhi" );
+		System.out.println(userBynameAndCity);
+		
+		List<User> startinName=userRepo.findByNameStartingWith("D");
+	    for(User startList:startinName)
+	    {
+	    	System.out.println(startList);
+	    }
+		
+	    System.out.println("==============================");
+	    
+		List<String> names=new ArrayList();
+		names.add("Rahul");
+		names.add("Deepak");
+		names.add("Rajat");
+		names.add("Swat");
+		
+		List<User> findNameInList=userRepo.findByNameIn(names);
+		
+		for(User nameList:findNameInList)
+	    {
+	    	System.out.println(nameList);
+	    }
 		
 		
 		
