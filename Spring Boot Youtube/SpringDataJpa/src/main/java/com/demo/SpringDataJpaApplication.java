@@ -117,10 +117,23 @@ public class SpringDataJpaApplication {
 		
 		for(User nameList:findNameInList)
 	    {
-	    	System.out.println(nameList);
+//	    	System.out.println(nameList);
 	    }
 		
 		
+		//fired query methods
+		List<User> allUsers=userRepo.getAllUsers();
+		System.out.println(allUsers);
+		
+		List<User> userStatus=userRepo.getUserByStatus("Programmer");
+		System.out.println(userStatus);
+		
+		List<User> userStatusCity=userRepo.getUserByStatusAndCity("Programmer","Haridwar");
+		System.out.println(userStatusCity);
+		
+		System.out.println("================================================");
+		
+		userRepo.getUsers().forEach(e -> System.out.println(e));
 		
 	}
 
