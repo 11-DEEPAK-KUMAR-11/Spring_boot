@@ -62,11 +62,11 @@ public class SpringDataJpaApplication {
 		
 		//get data from DB
 		
-//		List<User> itr=userRepo.findAll();
-//		for(User userList:itr)
-//		{
-//			System.out.println(userList);
-//		}
+		List<User> itr=userRepo.findAll();
+		for(User userList1:itr)
+		{
+			System.out.println(userList1);
+		}
 		
 		//or
 		
