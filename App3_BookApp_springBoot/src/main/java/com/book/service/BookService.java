@@ -30,7 +30,13 @@ public class BookService {
 	public Book getBookById(int id)
 	{
 		Book book=null;
-		book=list.stream().filter(e -> e.getId()==id).findFirst().get();
+		try {
+		      book=list.stream().filter(e -> e.getId()==id).findFirst().get();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
 		return book;
 	}
 	
@@ -49,8 +55,9 @@ public class BookService {
 		//books id match with given id leave this book and add other book in the same list by doing so 
 		//book with given id will be not there in the list----> when filter will return false which means
 		//book id is not matched with given id then collect it and add to the list.
+		
 		list=list.stream().filter(book -> book.getId()!=id).collect(Collectors.toList());
-		System.out.println("Book is deleted with id "+id);
+        //System.out.println("Book is deleted with id "+id);
 	}
 
 	//update book details
