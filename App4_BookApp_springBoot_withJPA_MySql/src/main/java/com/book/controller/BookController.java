@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,7 +41,7 @@ public class BookController {
     }
 	
 	
-    @PostMapping
+    @PostMapping("/books")
 	public ResponseEntity<Book> addBook(@RequestBody Book book) throws BookException
 	{
     	Book newbook=bService.addNewBook(book);
@@ -48,7 +49,7 @@ public class BookController {
     	return new ResponseEntity<>(newbook,HttpStatus.CREATED);
 	}
 	
-    @PutMapping
+    @PutMapping("/books/{id}")
 	public ResponseEntity<Book> updateBookById(@RequestBody Book book,@PathVariable ("id") int id) throws BookException
 	{
 		Book updatedBook=bService.updateBookById(book, id);
@@ -56,8 +57,13 @@ public class BookController {
 		return new ResponseEntity<>(updatedBook,HttpStatus.OK);
 	}
 	
-	
-	
+    @DeleteMapping("/books/{id}")
+	public ResponseEntity<Book> deleteBookId(@PathVariable ("id") int id ) throws BookException
+	{
+		Book book=bService.deleteBookbyId(id);
+		
+		return new ResponseEntity<>(book,HttpStatus.ACCEPTED);
+	}
 	
 	
 	
