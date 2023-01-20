@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -47,7 +48,13 @@ public class BookController {
     	return new ResponseEntity<>(newbook,HttpStatus.CREATED);
 	}
 	
-	
+    @PutMapping
+	public ResponseEntity<Book> updateBookById(@RequestBody Book book,@PathVariable ("id") int id) throws BookException
+	{
+		Book updatedBook=bService.updateBookById(book, id);
+		
+		return new ResponseEntity<>(updatedBook,HttpStatus.OK);
+	}
 	
 	
 	
