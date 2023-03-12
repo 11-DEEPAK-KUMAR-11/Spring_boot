@@ -22,7 +22,7 @@ public class Author {
 	private String language;
 	
 	@OneToMany
-	@JsonBackReference
+	@JsonBackReference   //To show only parent json data to prevent from cyclic json data display
 	private Book book;
 
 	public Author() {

@@ -18,8 +18,8 @@ public class Book {
 	
 	private String title;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JsonManagedReference
+	@OneToOne(cascade = CascadeType.ALL) //To save book details along with author details object
+	@JsonManagedReference                //To show only parent json data to prevent from cyclic json data display
 	private Author auther;
 
 	public Book() {
