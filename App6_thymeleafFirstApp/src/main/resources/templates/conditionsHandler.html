@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>conditions Handler Page</title>
+</head>
+<body>
+
+	<h1><u>Usecases for Conditional Statements</u></h1>
+	
+	<h1><u>Elvis</u></h1>   <!--works same as ternary operator-->
+	<h1>User is <span th:style="${isActive} ? 'color:green':'color:red'" th:text="${isActive} ? 'ACTIVE' : 'NOT ACTIVE'"></span></h1>
+	
+	<h1><u>If Unless</u></h1>
+	<h1 th:if="${gender}=='M'">User is Male</h1>        <!--if not same as 'M' then not print--> 
+	<h1 th:unless="${gender}=='M'">User is Female</h1>  <!--if not same as 'F' then not print-->
+	
+	<h1><u>Switch</u></h1>                              <!-- if multiple cases are required-->
+	<div th:switch="${#lists.size(num)}">
+		<h1 th:case="'0'">List is empty</h1>
+		<h1 th:case="'1'">List contains one element</h1>
+		<h1 th:case="*">List contains more than one elements</h1>
+	</div>
+</body>
+</html>
