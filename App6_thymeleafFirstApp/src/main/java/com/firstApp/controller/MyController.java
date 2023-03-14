@@ -1,6 +1,7 @@
 package com.firstApp.controller;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,4 +21,17 @@ public class MyController {
 		
 		return "about";  //returning page name i.e- about.html
 	}
+	
+	
+	@GetMapping("/loop")
+	public String iterate(Model model) {
+
+		List<String> list = List.of("Ram", "Shyam", "Rajat", "Swat");
+
+		model.addAttribute("listOfElements", list);
+
+		return "iterate";
+	}
+	
+	
 }

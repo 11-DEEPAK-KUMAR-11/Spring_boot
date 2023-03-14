@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Iterate Page</title>
+</head>
+<body>
+	
+	<!-- Types of data we can iterate : collection,map,array -->
+
+    <h1>Looping through thymeleaf</h1>
+	<h1>List of Elements : <span th:text="${listOfElements}"></span></h1>
+	
+	<ul>
+		<li th:each="n,status:${listOfElements}">
+		
+			<span th:style="${status.odd} ? 'color:blue;font-weight:bold':'color:green'" th:text="${status.index+1}+' '+${n}"></span>	
+		</li>
+	</ul>
+	
+	<!-- 
+		index - The current iteration index, starting with 0 (zero).
+		count - The number of elements processed so far
+		size - The total number of elements in the list
+		even/odd - checks if the current iteration index is even or odd
+		first - checks if the current iteration is the first one
+		last - checks if the current iteration is the last one
+	 -->
+	 <!-- Types of data we can iterate by this method is : collection,map,array -->
+</body>
+</html>
