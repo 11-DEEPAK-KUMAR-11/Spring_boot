@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" xmlns:th=" http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>First App</title>
+</head>
+<body>
+	<h1>First App using Thymeleaf</h1>
+	<h1 th:text="${ #strings.toUpperCase(name)}"></h1>
+	<h2 th:text="${date}"></h2>
+	<h2>Owner name is <span th:text="${ #strings.toUpperCase(name)}"></span></h2>
+	
+	<div th:with="a=8,b=3, n=${name}">
+	
+	   <h1 th:text="' value of b is '+${b}"></h1>
+	   <h1>Name is <span th:text="${name}"></span></h1>
+	   
+	   <h1 th:text="'sum of '+${a} +' and '+${b} +' is= '+${a+b}"></h1>
+	
+	</div>
+</body>
+</html>
