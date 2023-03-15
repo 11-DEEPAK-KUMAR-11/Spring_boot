@@ -46,6 +46,15 @@ public class MyController {
 		return "conditionsHandler";
 	}
 	
+	@GetMapping("/fragments")
+	public String service(Model model) {
+		
+		model.addAttribute("title","Learning Purpose");
+		model.addAttribute("date",new Date().toLocaleString());
+		
+		return "service";
+	}
+	
 	
 	
 }

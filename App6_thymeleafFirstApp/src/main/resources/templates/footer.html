@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Footer Section</title>
+</head>
+<body>
+
+	<footer id="fragmentTag" th:fragment="footer1(title,${date})">
+		<div class="container">
+			<h1>Java : <span th:text="${title}"></span></h1>
+			<h1>Date : <span th:text="${date}"></span></h1>
+			<h1>Learning is a key to success</h1>
+				
+		</div>
+	</footer>
+
+</body>
+</html>
