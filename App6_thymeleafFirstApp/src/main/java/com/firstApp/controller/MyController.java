@@ -46,6 +46,7 @@ public class MyController {
 		return "conditionsHandler";
 	}
 	
+	//Handler for including fragments
 	@GetMapping("/fragments")
 	public String service(Model model) {
 		
@@ -54,6 +55,22 @@ public class MyController {
 		
 		return "service";
 	}
+	
+	
+	@GetMapping("/newAbout")
+	public String newAbout()
+	{
+		return "aboutNew";
+	}
+	
+	@GetMapping("/contact")
+	public String contact()
+	{
+		return "contact";
+	}
+	
+	
+	
 	
 	
 	
