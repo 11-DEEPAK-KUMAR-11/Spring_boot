@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Adding CSS JS Image Page</title>
+
+<link rel="stylesheet" th:href="@{/css/myStyle.css}" />
+
+<!-- <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" /> -->
+
+</head>
+<body>
+
+	<div class="container">
+
+		<img alt="" class="profile" th:src="@{/image/pic.jpg}" />
+
+		<h1>Adding CSS, Javascript and Image in Thymeleaf</h1>
+
+		<p>Motivated and efficient Java developer has an interest in
+			coding. Programming languages like Java, JavaScript catalyzed my
+			curiosity for web development. I have worked in collaborative
+			environments demonstrating my coding and interpersonal skills to meet
+			deadlines. Looking forward for some interesting and challenging
+			opportunities.</p>
+	</div>
+
+	<script type="text/javascript" th:src="@{/js/myScript.js}"></script>
+
+	<!-- <script type="text/javascript" th:src="@{js/bootstrap.min.js}"></script> -->
+</body>
+</html>

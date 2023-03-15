@@ -1,5 +1,6 @@
 @charset "ISO-8859-1";
 
+
 body {
 	background: #8080ff;
 }
@@ -8,10 +9,9 @@ body {
 	background: #ffffff;
 	padding: 40px;
 	font-family: 'Roboto';
+	font-weight:bold;
 }
 
-section{
-	background:#004080;
-	color:white;
-	padding:25px;
+.profile{
+	border-radius:50%;
 }
