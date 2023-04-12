@@ -24,9 +24,13 @@ We should use Spring Boot Framework because:
 - Along with the Spring Boot Framework, many other Spring sister projects help to build applications addressing modern business needs. There are the following Spring sister projects are as follows:
 
 Spring Data: It simplifies data access from the relational and NoSQL databases.
+
 Spring Batch: It provides powerful batch processing.
+
 Spring Security: It is a security framework that provides robust security to applications.
+
 Spring Social: It supports integration with social networking like LinkedIn.
+
 Spring Integration: It is an implementation of Enterprise Integration Patterns. It facilitates integration with other enterprise applications using lightweight messaging and declarative adapters.
 
 ### Advantages of Spring Boot
